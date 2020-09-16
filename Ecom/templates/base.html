@@ -1,4 +1,4 @@
-{% load "static" %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +19,9 @@
 </head>
 
 <body>
+  <div class="container">
+    {% block body_block %} {% endblock %}
+  </div>
 
 
 
