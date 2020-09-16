@@ -9,3 +9,9 @@ from django.shortcuts import render
 def signup(request):
 
     return render(request,'Login_App/Signup.html')
+
+
+# Login View
+def login(request):
+
+    return render(request,'Login_App/Login.html')
