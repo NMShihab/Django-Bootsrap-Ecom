@@ -29,6 +29,17 @@ body{
   height: 50px;
   border-radius: 100%;
 } */
+
+.social-media .fb{
+  margin: 10px;
+	width: 50px;
+	height: 36px;
+	padding-top: 14px;
+	color:white;
+  background: #3b5998;
+  display: block;
+	border-radius:5px;
+}
 .text-center {
   display: block;
   font-family: Poppins-Bold;
