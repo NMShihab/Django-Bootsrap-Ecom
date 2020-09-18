@@ -2,6 +2,7 @@
 body{
   font-family: 'Poppins', sans-serif;
   background-color:#D6DBDF;
+  font-size: 1rem;
 }
 
 
@@ -30,6 +31,13 @@ body{
   border-radius: 100%;
 } */
 
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    font-size: 1rem;
+}
+
 .social-media .fb{
   margin: 10px;
 	width: 50px;
@@ -54,7 +62,7 @@ body{
   font-family: Poppins-Bold;
   background-color: #5D6D7E;
   font-size: 25px;
-  color: #333333;
+  /* color: #333333; */
   line-height: 1.3;
   text-align: left;
 }

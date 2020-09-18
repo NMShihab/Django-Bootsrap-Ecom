@@ -1,46 +1,53 @@
 {% extends 'base.html'%}
+{% load crispy_forms_tags %}
 
 {% block body_block %}
 {% include 'navbar.html' %}
 
 
 <section id="signup" class="py-5">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-lg-6">
-            <div class="card bg-info">
-            <div class="card-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
+        <div class="card">
+          <div class="card-body">
             <div class="modal-header">
-                <h4 class="text centers">Please fill out this form to Signup</h4>
-              </div>
-
-                <div class="form-group">
-                  <label for="email" class="text-body">Email</label>
-                  <input type="email" placeholder="email" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="password" class="text-body">Password</label>
-                  <input type="password" placeholder="password" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="password" class="text-body">Retype Password</label>
-                  <input type="password" class="form-control" placeholder="password">
-                </div>
-
-                <div class="col-md-12 py-2">
-                  <button class="btn btn-block btn-dark">Submit</button>
-                </div>
-                <div>
-                  <p>already have an account?<a href="account.html">Log In</a></p>
-                </div>
-              </div>
+              <h4 class="text centers">Please fill out this form to Signup</h4>
             </div>
-          </div>
-          <div class="col-md-12 col-lg-6">
-            <img src="img/e-3.jpg" class="img-fluid py-5 rounded-circle" alt="">
+            <form>
+              {% csrf_token %}
+
+              <div class="form-group">
+                <!-- <label for="email" class="text-body">Email</label> -->
+                <!-- <input type="email" placeholder="email" class="form-control"> -->
+                {{ form.email|as_crispy_field }}
+              </div>
+              <div class="form-group">
+                <!-- <label for="password" class="text-body">Password</label> -->
+                <!-- <input type="password" placeholder="password" class="form-control"> -->
+                {{ form.password1|as_crispy_field }}
+              </div>
+              <div class="form-group">
+                <!-- <label for="password" class="text-body">Retype Password</label> -->
+                <!-- <input type="password" class="form-control" placeholder="password"> -->
+                {{ form.password2|as_crispy_field }}
+              </div>
+
+              <div class="col-md-12 py-2">
+                <button class="btn btn-block btn-dark">Submit</button>
+              </div>
+              <div>
+                <p>already have an account?<a href="account.html">Log In</a></p>
+              </div>
+            </form>
           </div>
         </div>
-        </div>
-      </section>
+      </div>
+      <div class="col-md-12 col-lg-6">
+        <img src="img/e-3.jpg" class="img-fluid py-5 rounded-circle" alt="">
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}

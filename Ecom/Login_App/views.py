@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import SignUpForm
 
 
 # Create your views here.
@@ -7,8 +8,15 @@ from django.shortcuts import render
 # Sign Up views
 
 def signup(request):
+    form = SignUpForm()
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
 
-    return render(request,'Login_App/Signup.html')
+    context = {'form':form}
+
+    return render(request,'Login_App/Signup.html',context)
 
 
 # Login View
