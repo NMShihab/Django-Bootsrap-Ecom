@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "Login_App",
-    "Shop_App"
+    "Shop_App",
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,8 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_TEMPLATE_PACK="bootstrap4"
 
 WSGI_APPLICATION = 'Ecom.wsgi.application'
 

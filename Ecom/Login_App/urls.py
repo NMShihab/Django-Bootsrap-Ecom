@@ -4,6 +4,6 @@ from Login_App import views
 app_name = "Login_App"
 
 urlpatterns = [
-    path('signup/', views.signup, name='sign_up'),
-    path('login/', views.login, name='login'),
+    path('signup/', views.signup, name='signup'),
+    path('login/', views.login_, name='login'),
 ]
