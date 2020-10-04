@@ -2,59 +2,52 @@
 {% block body_block %}
 {% include 'navbar.html' %}
 
-<section id="account-section">
-  <div class="container">
-    <div class="row pt-5">
+<section id="signin" class="pt-5">
+    <div class="container">
+      <div class="row  pt-5" id="signin-row">
 
-      <div class="col-md-12 col-lg-6">
-        <img src="img/e-4.jpg" class="img-fluid py-5 rounded-circle" alt="">
-      </div>
+        <!-- <div class="col-md-12 col-lg-8">
+          <img src="img/key-2.jpg" id="signin-key" class="img-fluid py-5 rounded-circle" alt="">
+        </div> -->
 
-      <div class="col-md-12 col-lg-6">
-        <div class="card">
-          <div class="card-body">
+        <div class="col-md-12 col-lg-4 pt-4 pb-4">
+          <div class="card">
+            <div class="card-body">
 
-            <h4 class="text-center">Please fill out this form to Signin</h4>
-            <div class="form-group">
-              <label for="email" class="text-body">Email</label>
-              <input type="emai" class="form-control" placeholder="email">
-            </div>
-            <div class="form-group">
-              <label for="password" class="text-body">Password</label>
-              <input type="password" class="form-control" placeholder="password">
-            </div>
-            <div class="col-md-" id="signin-btn">
-              <div class="container">
-                <button class="btn btn-primary btn-block text-center">Singin</button>
+              <h4 class="text-center">Please fill out this form to Signin</h4>
+              <div class="form-group">
+                <label for="text" class="text-body">Username</label>
+                <input type="text" class="form-control" placeholder="enter username">
               </div>
-            </div>
+              <div class="form-group">
+                <label for="password" class="text-body">Password</label>
+                <input type="text" class="form-control" placeholder="enter password">
+              </div>
+              <div class="col-md-" id="signin-btn">
+                <div class="container">
+                <button class="btn btn-block">Singin</button>
+              </div>
+              </div>
             <br>
 
 
-            <div class="social-media">
-              <p>Or Log In with
+              <div class="social-media">
+                <p>Or Log In with
+                <i class="fa fa-facebook btn"></i>
+                <i class="fa fa-google btn"></i>
+                </p>
+                </div>
 
-                <a class="fb"><i class="fab fa-facebook-f"></i></a>
-                <a class="gl"><i class="fab fa-google"></i></a>
-
-
-
-
-              </p>
+              <div>
+                <p>Not a member yet?<a href="signup.html" class="text-warning">Signup</a></p>
+              </div>
             </div>
-
-            <div>
-              <p>Not a member yet?<a href="signup.html">Signup</a></p>
-            </div>
-
-
           </div>
         </div>
+
       </div>
-
     </div>
-  </div>
 
-</section>
+  </section>
 
 {% endblock %}
