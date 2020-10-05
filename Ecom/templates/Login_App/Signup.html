@@ -7,7 +7,7 @@
 
 <section id="signup" class="py-5">
   <div class="container">
-<<<<<<< HEAD
+
     <div class="row  pt-5">
 
       <div class="col-md-12 col-lg-4">
@@ -35,13 +35,13 @@
 
             <div class="col-md-" id="signup-btn">
               <div class="container">
-              <button class="btn btn-block">Singup</button>
+                <button class="btn btn-block">Singup</button>
+              </div>
             </div>
-            </div>
-          <br>
+            <br>
 
             <div id="go-to-signin">
-              <p>already have an account?<a href="signin.html">signin</a></p>
+              <p>already have an account?<a href="{% url "Login_App:login" %}">signin</a></p>
             </div>
           </div>
         </div>
@@ -51,53 +51,9 @@
         <img src="img/bg-06.jpg" class="img-fluid py-5 rounded-circle" alt="">
       </div>
 
-  </div>
-</div>
-
-</section
-=======
-    <div class="row">
-      <div class="col-md-12 col-lg-6">
-        <div class="card">
-          <div class="card-body">
-            <div class="modal-header">
-              <h4 class="text centers">Please fill out this form to Signup</h4>
-            </div>
-            <form method='POST'>
-              {% csrf_token %}
-
-              <div class="form-group">
-                <!-- <label for="email" class="text-body">Email</label> -->
-                <!-- <input type="email" placeholder="email" class="form-control"> -->
-                {{ form.username|as_crispy_field }}
-              </div>
-              <div class="form-group">
-                <!-- <label for="password" class="text-body">Password</label> -->
-                <!-- <input type="password" placeholder="password" class="form-control"> -->
-                {{ form.password1|as_crispy_field }}
-              </div>
-              <div class="form-group">
-                <!-- <label for="password" class="text-body">Retype Password</label> -->
-                <!-- <input type="password" class="form-control" placeholder="password"> -->
-                {{ form.password2|as_crispy_field }}
-              </div>
-
-              <div class="col-md-12 py-2">
-                <button class="btn btn-block btn-dark">Submit</button>
-              </div>
-              <div>
-                <p>already have an account?<a href="account.html">Log In</a></p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-12 col-lg-6">
-        <img src="img/e-3.jpg" class="img-fluid py-5 rounded-circle" alt="">
-      </div>
     </div>
   </div>
+
 </section>
->>>>>>> 347b954b08ce611dbcf9ae61615a2b3f9a4bd259
 
 {% endblock %}
