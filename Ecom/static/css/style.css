@@ -560,7 +560,7 @@ height: 355px;
 }
 
 #footer-social-section a .fa-facebook{
- margin: 0 5px;
+  margin: 0 5px;
   position: relative;
   display: block;
   width: 45px;
@@ -692,8 +692,8 @@ color: #0000A0;
 }
 
 
-.social-media .fa-facebook{
- margin: 0 5px;
+.social-media a .fa-facebook{
+  margin: 0 5px;
   position: relative;
   display: inline-block;
   width: 45px;
@@ -702,6 +702,7 @@ color: #0000A0;
   background-color: #3b5999;
   text-align: center;
   transition: .6s;
+
 }
 
 #signin .fa-google{
@@ -758,8 +759,13 @@ color: #0000A0;
  min-height: 700px; */
  width: 100%;
  background: #EEE2DC;
+
 }
 
+#signup-row{
+  display: grid;
+  place-items:center;
+}
 #signup
 .form-group{
   margin-bottom: 1rem;
@@ -770,7 +776,8 @@ color: #0000A0;
   font-size: 18px;
   border-radius: 20px;
   font-family: Poppins-Bold;
-  color: #333333;
+  /* color: #333333;
+  background: #EEE2DC */
 }
 
 #signup
@@ -799,6 +806,7 @@ color: #0000A0;
   font-size: 18px;
   border-radius: 20px;
 }
+
 
 
 

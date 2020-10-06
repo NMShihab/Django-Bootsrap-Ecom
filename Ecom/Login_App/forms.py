@@ -1,21 +1,21 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
-#from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from Login_App.models import User
 
+
 class SignUpForm(UserCreationForm):
-    email = forms.EmailField(required=True,widget=forms.TextInput(
+    email = forms.EmailField(required=True,label='',widget=forms.TextInput(
     attrs={
     'placeholder':'Email',
     'class':'form-group'
     }))
 
-    password1 = forms.CharField(required=True,widget=forms.PasswordInput(
+    password1 = forms.CharField(required=True,label='',widget=forms.PasswordInput(
     attrs={
     'placeholder':'Password',
     'class':'form-group'
     }))
-    password2 = forms.CharField(required=True,widget=forms.PasswordInput(
+    password2 = forms.CharField(required=True,label='',widget=forms.PasswordInput(
     attrs={
     'placeholder':'Confirm Password',
     'class':'form-group'
@@ -25,3 +25,8 @@ class SignUpForm(UserCreationForm):
     class Meta:
     	model = User
     	fields = ["email", "password1", "password2"]
+
+
+class SignIn(AuthenticationForm):
+    user = forms.CharField(required=True,label="",widget=forms.TextInput(attrs={'placeholder':'Email', 'class':'form-group'}))
+    password = forms.CharField(required=True,label="",widget=forms.PasswordInput(attrs={'placeholder':'Password','class':'form-group'}))

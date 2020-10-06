@@ -84,7 +84,7 @@ class UserProfile(models.Model):
     date_joined = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.username + " 's Profile"
+        return str(self.username)+ " 's Profile"
 
     def is_fully_filled(self):
         fields_names = [f.name for f in self._meta.get_fields()]

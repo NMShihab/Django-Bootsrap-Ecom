@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import SignUpForm
+from .forms import SignUpForm,SignIn
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login,logout,authenticate
 from django.shortcuts import HttpResponseRedirect
@@ -39,9 +39,6 @@ def login_(request):
 
             if user is not None:
                 login(request,user)
-
                 return HttpResponse("logged in")
-
-
 
     return render(request,'Login_App/Login.html',context={'form':form})

@@ -1,4 +1,6 @@
-{% extends 'base.html'%} {% load crispy_forms_tags %} {% block body_block %}
+{% extends 'base.html'%}
+<!-- {% load crispy_forms_tags %} -->
+{% block body_block %}
 {%include 'navbar.html' %}
 <section id="signin" class="pt-5">
   <div class="container">
@@ -11,19 +13,27 @@
         <div class="card">
           <div class="card-body">
             <h4 class="text-center">Please fill out this form to Signin</h4>
-            <div class="form-group">
-              <label for="text" class="text-body">Username</label>
-              <input type="text" class="form-control" placeholder="enter username" />
-            </div>
-            <div class="form-group">
-              <label for="password" class="text-body">Password</label>
-              <input type="text" class="form-control" placeholder="enter password" />
-            </div>
-            <div class="col-md-" id="signin-btn">
-              <div class="container">
-                <button class="btn btn-block">Singin</button>
+
+            <form method="POST">
+              {% csrf_token %}
+              <!-- <div class="form-group">
+                <label for="text" class="text-body">Username</label>
+                <input type="text" class="form-control" placeholder="enter username" />
               </div>
-            </div>
+              <div class="form-group">
+                <label for="password" class="text-body">Password</label>
+                <input type="text" class="form-control" placeholder="enter password" />
+              </div> -->
+              <div>
+                {{form.as_p}}
+
+              </div>
+              <div class="col-md-" id="signin-btn">
+                <div class="container">
+                  <button class="btn btn-block" type="submit">Singin</button>
+                </div>
+              </div>
+            </form>
 
             <br />
 
@@ -46,5 +56,7 @@
     </div>
   </div>
 </section>
+
+{%include 'footer.html' %}
 
 {% endblock %}
