@@ -37,10 +37,10 @@
             <a href="{%url "Shop_App:home"%}" class="nav-link text-warning">Home</a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#new-item" class="nav-link text-warning">New
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="#offer-item" class="nav-link text-warning">Offer
@@ -52,9 +52,7 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="{% url "Login_App:login" %}" class="nav-link text-warning">Signin</a>
-          </li>
+
 
           <li class="nav-item">
             <a href="cart.html" class="nav-link ml-2 text-warning">
@@ -62,11 +60,21 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="profile.html" class="nav-link ml-2 text-info">
-              <i class="fa fa-user-circle"></i>
-            </a>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item submenu dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle"></i>{{request.user.username}}</a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Edit Profile</a></li>
+              <div class="dropdown-divider"></div>
+              <li class="nav-item"><a class="nav-link" href="{% url "Login_App:logout" %}">Log Out</a></li>
+            </ul>
           </li>
+          {% else %}
+          <li class="nav-item">
+            <a href="{% url "Login_App:login" %}" class="nav-link text-warning">Signin</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </div>

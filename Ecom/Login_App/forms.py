@@ -28,5 +28,13 @@ class SignUpForm(UserCreationForm):
 
 
 class SignIn(AuthenticationForm):
-    user = forms.CharField(required=True,label="",widget=forms.TextInput(attrs={'placeholder':'Email', 'class':'form-group'}))
-    password = forms.CharField(required=True,label="",widget=forms.PasswordInput(attrs={'placeholder':'Password','class':'form-group'}))
+    email = forms.EmailField(required=True,label='',widget=forms.TextInput(
+    attrs={
+    'placeholder':'Email',
+    'class':'form-group'
+    }))
+    password = forms.CharField(required=True,label='',widget=forms.PasswordInput(
+    attrs={
+    'placeholder':'Password',
+    'class':'form-group'
+    }))

@@ -648,6 +648,8 @@ color: #0000A0;
 
 .form-group input{
   border-radius: 20px;
+
+
 }
 
 .form-group textarea{
@@ -672,6 +674,24 @@ color: #0000A0;
   background: #EEE2DC;
 }
 
+
+#signin .form-group input{
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 20px;
+  font-family: Poppins-Bold;
+  /* color: #333333;
+  background: #EEE2DC */
+}
+
+
+
+
+
 #signin-row{
 
   display: grid;
@@ -688,7 +708,7 @@ color: #0000A0;
   font-size: 22px;
   color: #333333;
   line-height: 1.5;
-  text-align: left;
+  text-align: center;
 }
 
 

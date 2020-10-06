@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
-<!-- {% load crispy_forms_tags %} -->
+{% load crispy_forms_tags %}
+
 {% block body_block %}
 {%include 'navbar.html' %}
 <section id="signin" class="pt-5">
@@ -12,7 +13,7 @@
       <div class="col-md-12 col-lg-4 pt-4 pb-4">
         <div class="card">
           <div class="card-body">
-            <h4 class="text-center">Please fill out this form to Signin</h4>
+            <h4 class="text-center pb-3"> Signin Here </h4>
 
             <form method="POST">
               {% csrf_token %}
@@ -24,10 +25,18 @@
                 <label for="password" class="text-body">Password</label>
                 <input type="text" class="form-control" placeholder="enter password" />
               </div> -->
-              <div>
-                {{form.as_p}}
+              <div class="form-group">
+                <h5 class="text-center"> Email </h5>
+                {{form.error}}
+                {{form.username}}
 
               </div>
+              <div class="form-group">
+                <h5 class="text-center"> Password </h5>
+                {{form.password}}
+
+              </div>
+
               <div class="col-md-" id="signin-btn">
                 <div class="container">
                   <button class="btn btn-block" type="submit">Singin</button>
@@ -47,7 +56,7 @@
 
             <div>
               <p>
-                Not a member yet?<a href="{% url "Login_App:signup" %}" class="text-warning">Signup</a>
+                Not a member yet?<a href="{% url "Login_App:signup" %}" class="text-warning"> Signup </a>
               </p>
             </div>
           </div>
