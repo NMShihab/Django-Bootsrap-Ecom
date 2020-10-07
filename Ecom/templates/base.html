@@ -22,19 +22,29 @@
 </head>
 
 <body>
+  <div>
+    <div class="messages container mt-2">
+      {% if messages %}
+      {% for message in messages %}
+      <div {% if message.tags %} class="alert alert-{{message.tags}}{% endif %}" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
 
-  {% block body_block %} {% endblock %}
+    {% block body_block %}
+
+    {% endblock %}
 
 
 
 
-  <script src="{% static "js/jquery.min.js" %}"></script>
-  <script src="{% static "js/popper.js" %}"></script>
-  <script src="{% static "js/bootstrap.min.js" %}"></script>
-  <script src="{% static "js/navbar-fixed.js" %}"></script>
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/popper.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/navbar-fixed.js" %}"></script>
 </body>
-
-
-
 
 </html

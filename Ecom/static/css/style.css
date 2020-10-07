@@ -643,27 +643,18 @@ color: #0000A0;
   height: 45px;
 }
 
-
-/* FOOTER END */
-
 .form-group input{
   border-radius: 20px;
-
-
 }
 
 .form-group textarea{
-  border-radius: 20px;
+ border-radius: 20px;
+
 }
 
-/* SIGNIN SECTION START */
+/* FOOTER END */
 
-/* #signin{
- background: url('../img/bg-06.jpg')no-repeat center top;
- background-size: cover;
- background-attachment: fixed;
- min-height: 700px;
-}
+
 
 #signin-key{
   width: 550px;
@@ -675,18 +666,8 @@ color: #0000A0;
 }
 
 
-#signin .form-group input{
-  margin-bottom: 1rem;
-  border-radius: 20px;
-  text-align: center;
-  width: 100%;
-  padding: 8px;
-  font-size: 18px;
-  border-radius: 20px;
-  font-family: Poppins-Bold;
-  /* color: #333333;
-  background: #EEE2DC */
-}
+
+
 
 
 
@@ -696,6 +677,22 @@ color: #0000A0;
 
   display: grid;
   place-items: center;
+}
+
+#signin .form-group input{
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 20px;
+  font-family: Poppins-Bold;
+  outline: none;
+  border: 2px solid #aaa;
+  box-sizing: border-box;
+  transition: .3s;
+
 }
 
  #signin
@@ -796,9 +793,20 @@ color: #0000A0;
   font-size: 18px;
   border-radius: 20px;
   font-family: Poppins-Bold;
+  outline: none;
+  border: 2px solid #aaa;
+  box-sizing: border-box;
+  transition: .3s;
+
   /* color: #333333;
   background: #EEE2DC */
 }
+
+input:focus{
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
 
 #signup
 .card{

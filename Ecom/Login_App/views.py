@@ -1,11 +1,12 @@
 from django.shortcuts import render
-from .forms import SignUpForm,SignIn
+from .forms import SignUpForm,SignIn,Profile_form
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login,logout,authenticate
 from django.shortcuts import HttpResponseRedirect
 from django.http import  HttpResponse
 from django.urls import  reverse
 from django.contrib.auth.decorators import login_required
+from Login_App.models import UserProfile
 
 
 # Create your views here.
@@ -50,3 +51,18 @@ def logOut(request):
     logout(request)
     # messages.warning(request, "You are logged out!!")
     return HttpResponseRedirect(reverse('Shop_App:home'))
+
+@login_required
+def edit_profile(request):
+    current_user = UserProfile.objects.get(user = request.user)
+    form = Profile_form(instance=current_user)
+
+    if request.method == "POST":
+        form = Profile_form(data = request.POST,instance=current_user)
+
+        if form.is_valid():
+            form.save()
+            # messages.success(request,"Your profile updated")
+            form = Profile_form(instance=current_user)
+
+    return render(request,"Login_App/profile.html",context={'form':form})
