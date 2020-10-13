@@ -28,5 +28,5 @@ class Product(models.Model):
         return str(self.product_name)
 
 
-    class  Meta:
-        ordering = ["-created"]
+    class Meta:
+        ordering = ["created"]
