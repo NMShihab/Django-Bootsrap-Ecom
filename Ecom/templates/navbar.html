@@ -1,30 +1,31 @@
+{% load static %}
 <nav class="navbar fixed-top bg-dark">
   <div class="top_nav">
-<div class="left">
-<a href="#" class="navbar-brand nav-item logo"  id="nav-head"><span>ShopKeeper</span>
-</a>
+    <div class="left">
+      <a href="{% url "Shop_App:home" %}" class="navbar-brand nav-item logo" id="nav-head"><span>ShopKeeper</span>
+      </a>
 
-<a class="nav-link dropdown-toggle text-warning"data-toggle="dropdown" href="#">Catagories</a>
- <div class="dropdown-menu">
-   <li>
-   <a href="men.html"class="dropdown-item">cloth for men</a>
-   <a href="women.html"class="dropdown-item">cloth for women</a>
-   <a href="gadgets.html"class="dropdown-item">electronic gadgets</a>
-   <a href="phone.html"class="dropdown-item">phone</a>
-   <a href="kids.html"class="dropdown-item">kids</a>
-   </li>
- </div>
-</div>
+      <a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#">Catagories</a>
+      <div class="dropdown-menu">
+        <li>
+          <a href="men.html" class="dropdown-item">cloth for men</a>
+          <a href="women.html" class="dropdown-item">cloth for women</a>
+          <a href="gadgets.html" class="dropdown-item">electronic gadgets</a>
+          <a href="phone.html" class="dropdown-item">phone</a>
+          <a href="kids.html" class="dropdown-item">kids</a>
+        </li>
+      </div>
+    </div>
 
-<div class="right">
-<form class="form-inline ml-5 pl-5" id="search-box">
-  <input class="form-control" type="text" placeholder="search">
-  <i class="fa fa-search btn btn-info"></i>
-</form>
-</div>
-</div>
+    <div class="right">
+      <form class="form-inline ml-5 pl-5" id="search-box">
+        <input class="form-control" type="text" placeholder="search">
+        <i class="fa fa-search btn btn-info"></i>
+      </form>
+    </div>
+  </div>
 
-<div class="multi-color-border"></div>
+  <div class="multi-color-border"></div>
 
   <div class="bottom_nav navbar-expand-md" id="nav-items">
     <div class="container">
@@ -32,28 +33,26 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon bg-info"></span> </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li  class="nav-item">
-            <a href="index.html" class="nav-link text-warning active">Home</a>
+          <li class="nav-item">
+            <a href="{%url "Shop_App:home"%}" class="nav-link text-warning">Home</a>
+          </li>
+
+          <!-- <li class="nav-item">
+            <a href="#new-item" class="nav-link text-warning">New
+            </a>
+          </li> -->
+
+          <li class="nav-item">
+            <a href="#offer-item" class="nav-link text-warning">Offer
+            </a>
           </li>
 
           <li class="nav-item">
-           <a href="#new-item" class="nav-link text-warning">New
-           </a>
+            <a href="{%url "Shop_App:contact"%}" class="nav-link text-warning">Contact
+            </a>
           </li>
 
-          <li class="nav-item">
-           <a href="#offer-item" class="nav-link text-warning">Offer
-           </a>
-          </li>
 
-          <li class="nav-item">
-           <a href="contact.html" class="nav-link text-warning">Contact
-           </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="signin.html" class="nav-link text-warning">Signin</a>
-          </li>
 
           <li class="nav-item">
             <a href="cart.html" class="nav-link ml-2 text-warning">
@@ -61,13 +60,23 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="profile.html" class="nav-link ml-2 text-info">
-              <i class="fa fa-user-circle"></i>
-            </a>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item submenu dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle"></i>{{request.user.username}}</a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url "Login_App:profile" %}">Edit Profile</a></li>
+              <div class="dropdown-divider"></div>
+              <li class="nav-item"><a class="nav-link" href="{% url "Login_App:logout" %}">Log Out</a></li>
+            </ul>
           </li>
-          </ul>
-        </div>
-        </div>
-        </div>
+          {% else %}
+          <li class="nav-item">
+            <a href="{% url "Login_App:login" %}" class="nav-link text-warning">Signin</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
 </nav>

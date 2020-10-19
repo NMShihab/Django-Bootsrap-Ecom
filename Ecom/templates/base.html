@@ -10,6 +10,7 @@
   <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
   <link rel="stylesheet" href="{% static "css/all.min.css" %}">
   <link rel="stylesheet" href="{% static "css/fontawesome.min.css" %}">
+  <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
   <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
   <link rel="stylesheet" href="{% static "css/navbar-fixed.css" %}">
   <link rel="stylesheet" href="{% static "css/style.css" %}">
@@ -21,8 +22,16 @@
 </head>
 
 <body>
+  {%include 'navbar.html' %}
 
-  {% block body_block %} {% endblock %}
+  {% block body_block %}
+
+  <div class="container">
+
+
+  </div>
+
+  {% endblock %}
 
 
 
@@ -32,8 +41,5 @@
   <script src="{% static "js/bootstrap.min.js" %}"></script>
   <script src="{% static "js/navbar-fixed.js" %}"></script>
 </body>
-
-
-
 
 </html
