@@ -1,0 +1,90 @@
+
+/* #signin{
+ background: url('../img/bg-06.jpg')no-repeat center top;
+ background-size: cover;
+ background-attachment: fixed;
+ min-height: 700px;
+}
+
+#signin-key{
+  width: 550px;
+} */
+
+
+#signin{
+  width: 100%;
+    background: #EEE2DC;
+}
+
+#signin-row{
+
+  display: grid;
+  place-items: center;
+}
+
+ #signin
+.card{
+  border-radius: 10px;
+}
+
+#signin label{
+  font-family: sans-serif;
+  font-size: 22px;
+  color: #333333;
+  line-height: 1.5;
+  text-align: left;
+}
+
+
+.social-media .fa-facebook{
+ margin: 0 5px;
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: #3b5999;
+  text-align: center;
+  transition: .6s;
+}
+
+#signin .fa-google{
+ margin: 0 5px;
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: #ea4335;
+  text-align: center;
+  transition: .6s;
+}
+.social-media i:hover{
+  transform: translate(0, -10px);
+}
+
+#signin .fa{
+  color: #fff;
+}
+
+#signin .fa:hover{
+  background-color: #00c300;
+}
+
+
+#signin-btn{
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #1c8adb;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+#signin-btn:hover
+{
+  cursor: pointer;
+  background: #39dc79;
+  color: #000;
+}

@@ -1,0 +1,36 @@
+
+#contact{
+  padding-top: 100px;
+ /* background: url('../img/bg-04.jpg')no-repeat center top; */
+ background: #FFF;
+ background-size: cover;
+ background-attachment: fixed;
+ min-height: 700px;
+}
+
+#contact-card{
+  background: #F7F9F9;
+  height: 75px;
+}
+
+#contact-card{
+  height: 440px;
+  background: #F7F9F9;
+}
+
+#contact-send{
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #1c8adb;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+#contact-send:hover
+{
+  cursor: pointer;
+  background: #5FFB17;
+  color: #000;
+}
